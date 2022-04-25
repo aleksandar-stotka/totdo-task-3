@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Todoitems({ deleteTodos, todo }) {
   return (
     <div className="container">
@@ -7,9 +7,9 @@ function Todoitems({ deleteTodos, todo }) {
         <main className="row">
           <div className="col s12 m6">
             {todo.map((item) => {
-              const { id, title, completed } = item;
+              const { title, completed, id } = item;
               return (
-                <div className="card blue-grey" key={id}>
+                <Link className="card blue-grey" key={id} to={`/user/${id}`}>
                   <div className="card-content white-text">
                     <span className="card-title">{title}</span>
                     <span>{completed}</span>
@@ -17,7 +17,7 @@ function Todoitems({ deleteTodos, todo }) {
                   <button onClick={() => deleteTodos(id)} className="btn">
                     delete
                   </button>
-                </div>
+                </Link>
               );
             })}
           </div>
