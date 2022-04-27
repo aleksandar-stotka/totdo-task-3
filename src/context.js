@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Loading from "./components/Loading";
+import TodoList from "./pages/TodoList";
 
 const AppContext = React.createContext();
 const url = "https://jsonplaceholder.typicode.com/todos";
@@ -35,6 +36,9 @@ const AppProvider = ({ children }) => {
 
     setTodos(removeTodos);
   };
+  const completedHandler = () => {
+    const newCompletedHandler = todo.completed;
+  };
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -46,6 +50,7 @@ const AppProvider = ({ children }) => {
         todo,
         loading,
         deleteTodos,
+        completedHandler,
       }}
     >
       {children}
