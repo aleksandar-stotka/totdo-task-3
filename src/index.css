@@ -43,6 +43,11 @@ Variables
   --max-width: 1170px;
   --fixed-width: 620px;
 }
+ .complete {
+   width: 20rem;
+   border-left: 1px solid;
+ }
+
 /*
 =============== 
 Global Styles

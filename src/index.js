@@ -7,11 +7,9 @@ import App from "./App";
 import { AppProvider } from "./context";
 
 render(
-  <AppProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </AppProvider>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
 
   document.getElementById("root")
 );
